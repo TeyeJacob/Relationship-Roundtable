@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationship Roundtable</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="functions.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <img src="WhatsApp Image 2025-04-12 at 7.22.39 PM.jpeg" alt="Logo" class="logo">
+        <h1>Welcome to Relationship Roundtable</h1>
+        <p>A community where we explore relationships, personal growth, and meaningful connections.</p>
+    </header>
+
+    <nav class="navbar">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="old-pictures.html">Old Pictures</a></li>
+            <li><a href="weekly-activities.html">Weekly Activities</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="section">
+        
+            <p> This is a dynamic and interactive community where we dive into the latest topics and trends in relationships.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Relationship Roundtable. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Test</title>
+    <style>
+        .love-emoji {
+            position: absolute;
+            z-index: 1000;
+            pointer-events: none;
+            animation: floatUp 2s ease-out forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <script>
+        function generateLoveEmojis() {
+            const sections = document.querySelectorAll('.section'); // Target all sections
+            const randomSection = sections[Math.floor(Math.random() * sections.length)]; // Pick a random section
+
+            const emoji = document.createElement('div');
+            emoji.textContent = '❤️';
+            emoji.className = 'love-emoji';
+
+            // Generate random position within the section
+            const sectionRect = randomSection.getBoundingClientRect();
+            emoji.style.fontSize = `${Math.random() * 20 + 20}px`; // Random size
+            emoji.style.left = `${Math.random() * sectionRect.width + sectionRect.left}px`; // Random horizontal position within the section
+            emoji.style.top = `${Math.random() * sectionRect.height + sectionRect.top + window.scrollY}px`; // Random vertical position within the section
+
+            document.body.appendChild(emoji);
+
+            setTimeout(() => {
+                emoji.style.opacity = '0';
+                emoji.style.transform = `translateY(-50px)`;
+            }, 100);
+
+            setTimeout(() => {
+                document.body.removeChild(emoji);
+            }, 2000);
+        }
+
+        setInterval(generateLoveEmojis, 300);
+    </script>
+</body>
+</html>
+
+

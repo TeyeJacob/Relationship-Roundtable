@@ -1,0 +1,199 @@
+
+/* General Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.8;
+    background-image: url('download (4).jfif'); /* Background image */
+    background-attachment: fixed;
+    background-position: center;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for night mode */
+}
+
+/* Header */
+.header {
+    background: rgba(26, 115, 232, 0.7); /* Semi-transparent blue */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid rgba(0, 74, 173, 0.8); /* Semi-transparent border */
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Logo Styling */
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Navbar for desktop */
+.navbar {
+    display: flex; /* Visible by default on desktop */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 74, 173, 0.9); /* Deep blue with slight transparency */
+    padding: 10px 20px;
+    position: relative; /* Position it below the header */
+    z-index: 1000;
+    margin-top: 0; /* Ensure no gap between header and navbar */
+}
+
+.navbar .nav-links {
+    display: flex; /* Align items horizontally */
+    flex-direction: row; /* Ensure links are in a row */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin: 0 15px; /* Add spacing between items */
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Highlight effect on hover */
+}
+
+/* Navbar visibility for mobile */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 74, 173, 0.9); /* Deep blue with slight transparency */
+        padding: 10px;
+        border-radius: 0 0 5px 0; /* Rounded bottom-left corner */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 200px; /* Adjust width for mobile */
+    }
+
+    .navbar.show {
+        display: flex; /* Show the navbar when toggled */
+    }
+
+    .navbar .nav-links {
+        flex-direction: column; /* Stack links vertically on mobile */
+        width: 100%;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0; /* Add spacing between items on mobile */
+    }
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Highlight effect on hover */
+}
+
+/* Night Mode */
+body.night-mode {
+    background: #121212; /* Dark background */
+    color: #f5f5f5; /* Light text color */
+}
+
+body.night-mode .header {
+    background: rgba(51, 51, 51, 0.8); /* Darker header */
+}
+
+body.night-mode .navbar {
+    background: rgba(51, 51, 51, 0.8); /* Darker navbar */
+}
+
+body.night-mode .footer {
+    background: rgba(34, 34, 34, 0.8); /* Darker footer */
+    color: #f5f5f5; /* Light text color */
+}
+
+body.night-mode .nav-links a {
+    color: #f5f5f5; /* Light text for navbar links */
+}
+
+body.night-mode .nav-links a:hover {
+    color: #ffcc00; /* Golden hover effect */
+}
+
+/* Section */
+.section {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    margin: 20px auto;
+    max-width: 1200px; /* Limit the width for better readability */
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    color: #004aad; /* Deep blue for headings */
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1rem;
+    color: #555; /* Neutral text color */
+}
+
+/* Footer */
+/* Ensure the body and html take full height */
+html, body {
+    height: 100%; /* Make the body and html fill the viewport height */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Use flexbox to structure the layout */
+}
+
+/* Main content should take up available space */
+main {
+    flex: 1; /* Allow the main content to grow and take up available space */
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 51, 102, 0.8); /* Dark blue with slight transparency */
+    color: white;
+    font-size: 0.9rem;
+    border-top: 5px solid rgba(0, 74, 173, 0.8); /* Semi-transparent border */
+}
+

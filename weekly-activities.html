@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Activities</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Weekly Activities</h1>
+    </header>
+
+    <main class="section">
+        <h2>Our Weekly Activities</h2>
+        <p>Join us for our weekly activities designed to bring the community closer and foster meaningful connections</p>
+        <ul class="activity-list">
+            <li> Monday: Men Crush Monday(7am- 7pm)
+                • Riddle Riddle (7:30pm - 9:30pm) </li>
+            <li> Tuesday: Relationship Talk and Discussions On love Connections</li>
+            <li> Wednesday: Women Crush Wednesday _(6am -6pm)_ 
+                • Health Talk or Tips ( 6pm - 9pm) </li>
+            <li> Thursday: Throwback Pictures, Videos and memories ( 8am - 7pm) 
+                • Code Game ( 8pm - 9:30pm ) 
+                • Movie Night ( 10pm - 12am) </li>               
+            <li> Friday: Business & Advertising (7am - 8pm) 
+                • Freaky Friday ( 9pm - 11:30pm) </li>
+            <li> Saturday: Call or Visit a Member Day (6am - 5pm) 
+                 Anonymous Messages Or Chat ( 6pm - 10pm) </li>
+            <li> Sunday: Selfie  Sunday with Bible Verses (6am- 6pm) 
+                • General Hot seat ( 8pm - 9:30pm) 
+               </li>
+        </ul>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Relationship Roundtable. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Test</title>
+    <style>
+        .love-emoji {
+            position: absolute;
+            z-index: 1000;
+            pointer-events: none;
+            animation: floatUp 2s ease-out forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+    <script>
+        function generateLoveEmojis() {
+            const sections = document.querySelectorAll('.section'); // Target all sections
+            const randomSection = sections[Math.floor(Math.random() * sections.length)]; // Pick a random section
+
+            const emoji = document.createElement('div');
+            emoji.textContent = '❤️';
+            emoji.className = 'love-emoji';
+
+            // Generate random position within the section
+            const sectionRect = randomSection.getBoundingClientRect();
+            emoji.style.fontSize = `${Math.random() * 20 + 20}px`; // Random size
+            emoji.style.left = `${Math.random() * sectionRect.width + sectionRect.left}px`; // Random horizontal position within the section
+            emoji.style.top = `${Math.random() * sectionRect.height + sectionRect.top + window.scrollY}px`; // Random vertical position within the section
+
+            document.body.appendChild(emoji);
+
+            setTimeout(() => {
+                emoji.style.opacity = '0';
+                emoji.style.transform = `translateY(-50px)`;
+            }, 100);
+
+            setTimeout(() => {
+                document.body.removeChild(emoji);
+            }, 2000);
+        }
+
+        setInterval(generateLoveEmojis, 300);
+    </script>
+</body>
+</html>

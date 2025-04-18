@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Memories</h1>
+    </header>
+
+    <main class="section">
+        <h2>Our Cherished Memories</h2>
+        <p>Here are some of the most cherished moments we've shared as a community. From fun events to heartfelt discussions, these memories remind us of the bonds we've built together.</p>
+        <ul class="memory-list">
+            <li>Community Picnic - Summer 2024</li>
+            <li>Virtual Game Night - Winter 2023</li>
+            <li>Annual Relationship Workshop - Spring 2025</li>
+        </ul>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Relationship Roundtable. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Test</title>
+    <style>
+        .love-emoji {
+            position: absolute;
+            z-index: 1000;
+            pointer-events: none;
+            animation: floatUp 2s ease-out forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+    <script>
+        function generateLoveEmojis() {
+            const sections = document.querySelectorAll('.section'); // Target all sections
+            const randomSection = sections[Math.floor(Math.random() * sections.length)]; // Pick a random section
+
+            const emoji = document.createElement('div');
+            emoji.textContent = '❤️';
+            emoji.className = 'love-emoji';
+
+            // Generate random position within the section
+            const sectionRect = randomSection.getBoundingClientRect();
+            emoji.style.fontSize = `${Math.random() * 20 + 20}px`; // Random size
+            emoji.style.left = `${Math.random() * sectionRect.width + sectionRect.left}px`; // Random horizontal position within the section
+            emoji.style.top = `${Math.random() * sectionRect.height + sectionRect.top + window.scrollY}px`; // Random vertical position within the section
+
+            document.body.appendChild(emoji);
+
+            setTimeout(() => {
+                emoji.style.opacity = '0';
+                emoji.style.transform = `translateY(-50px)`;
+            }, 100);
+
+            setTimeout(() => {
+                document.body.removeChild(emoji);
+            }, 2000);
+        }
+
+        setInterval(generateLoveEmojis, 300);
+    </script>
+</body>
+</html>
